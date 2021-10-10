@@ -3,10 +3,13 @@
 import cv2
 import numpy as np
 
-img1 = cv2.imread('20210701_185956.jpg', cv2.IMREAD_GRAYSCALE)
-img2 = cv2.imread('20210701_185956.jpg', cv2.IMREAD_GRAYSCALE)
+img1 = cv2.imread('photos/256_nobg/24bit/KakaoTalk_20211007_224543118-removebg-preview.png', cv2.IMREAD_GRAYSCALE)
+img2 = cv2.imread('photos/256_nobg/24bit/KakaoTalk_20211007_224543118-removebg-preview.png', cv2.IMREAD_GRAYSCALE)
+
 # 구조화 요소 커널, 사각형 (5x5) 생성 ---①
 k = cv2.getStructuringElement(cv2.MORPH_RECT, (5,5))
+# 블러 함수
+k = cv2.blur(k,(5,5))
 # 열림 연산 적용 ---②
 opening = cv2.morphologyEx(img1, cv2.MORPH_OPEN, k)
 # 닫힘 연산 적용 ---③

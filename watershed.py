@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 
 # img = cv2.imread('images/watershed.jpg')
-img = cv2.imread('20210701_185956.jpg')
+img = cv2.imread('photos/256_nobg/24bit/KakaoTalk_20211007_224543118-removebg-preview.png')
 
 # binaray image로 변환
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
