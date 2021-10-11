@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 
 # img = cv2.imread('images/watershed.jpg')
-img = cv2.imread('photos/256_nobg/24bit/KakaoTalk_20211007_224543118-removebg-preview.png')
+img = cv2.imread('photos/256_nobg/24bit/KakaoTalk_20211007_224543118_04-removebg-preview.png')
 
 # binaray image로 변환
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -45,6 +45,6 @@ titles = ['Gray','Binary','Sure BG','Distance','Sure FG','Unknown','Markers','Re
 for i in range(len(images)):
     plt.subplot(2,4,i+1),plt.imshow(images[i]),plt.title(titles[i]),plt.xticks([]),plt.yticks([])
 
-cv2.imwrite('result_watershed.png',img)
+cv2.imwrite('result_watershed_2.png',img)
 
 plt.show()
