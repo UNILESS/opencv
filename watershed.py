@@ -14,7 +14,7 @@ ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
 
 #Morphology의 opening, closing을 통해서 노이즈나 Hole제거
 kernel = np.ones((3,3),np.uint8)
-opening = cv2.morphologyEx(thresh,cv2.MORPH_OPEN,kernel,iterations=2)
+opening = cv2.morphologyEx(thresh,cv2.MORPH_OPEN,kernel,iterations=1)
 
 # dilate를 통해서 확실한 Backgroud
 sure_bg = cv2.dilate(opening,kernel,iterations=3)
@@ -39,12 +39,12 @@ markers = cv2.watershed(img,markers)
 img[markers == -1] = [255,0,0]
 
 
-images = [gray,thresh,sure_bg,  dist_transform, sure_fg, unknown, markers, img]
+images = [gray, thresh, sure_bg, dist_transform, sure_fg, unknown, markers, img]
 titles = ['Gray','Binary','Sure BG','Distance','Sure FG','Unknown','Markers','Result']
 
 for i in range(len(images)):
     plt.subplot(2,4,i+1),plt.imshow(images[i]),plt.title(titles[i]),plt.xticks([]),plt.yticks([])
 
-cv2.imwrite('result_watershed_2.png',img)
+cv2.imwrite('result_watershed_4.png',img)
 
 plt.show()
