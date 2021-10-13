@@ -27,5 +27,5 @@ for c in cnts:
     num += 1
 
 cv2.imshow('image', image)
-cv2.imwrite('ROI_INPUT.png',image)
+cv2.imwrite('result_photo/ROI_INPUT.png', image)
 cv2.waitKey()

@@ -45,6 +45,6 @@ titles = ['Gray','Binary','Sure BG','Distance','Sure FG','Unknown','Markers','Re
 for i in range(len(images)):
     plt.subplot(2,4,i+1),plt.imshow(images[i]),plt.title(titles[i]),plt.xticks([]),plt.yticks([])
 
-cv2.imwrite('result_watershed_4.png',img)
+cv2.imwrite('result_photo/result_watershed_4.png', img)
 
 plt.show()
