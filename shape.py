@@ -33,16 +33,15 @@ def setLabel(img, pts, label):
 
 
 def imsave(img, pts, num):
-    rect = cv2.minAreaRect(pts)
-    print(rect)
-    crop_min_rect = crop_minAreaRect(img, rect)
-    cv2.imwrite('SPL_{}.png'.format(num), crop_min_rect)
-
-    (x, y, w, h) = cv2.boundingRect(pts) # 현재 angle 값 못 넣고 있음.
+    (x, y, w, h) = cv2.boundingRect(pts)
     pt1 = (x, y)
     pt2 = (x + w, y + h)
     cv2.rectangle(img, pt1, pt2, (0, 255, 0), 2)
     ROI = original[y-3:y+h+3, x-3:x+w+3]
+    cv2.imshow("",ROI)
+    cv2.waitKey()
+
+
     cv2.imwrite('SPL_{}.png'.format(num), ROI)
 
 
