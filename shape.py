@@ -1,6 +1,6 @@
 import math
 import cv2
-import numpy as np성
+import numpy as np
     cv2.imwrite('SPL_{}.png'.format(num), ROI)
 
 
