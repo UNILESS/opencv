@@ -1,8 +1,8 @@
-import cv2;
-import numpy as np;
+import cv2
+import numpy as np
 
 # Read image
-im_in = cv2.imread("photos/256_nobg/24bit/KakaoTalk_20211007_224543118_04-removebg-preview.png", cv2.IMREAD_GRAYSCALE);
+im_in = cv2.imread("photos/256_nobg/24bit/KakaoTalk_20211007_224543118_04-removebg-preview.png", cv2.IMREAD_GRAYSCALE)
 
 # Threshold.
 # Set values equal to or above 220 to 0.

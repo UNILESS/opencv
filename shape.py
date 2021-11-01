@@ -1,20 +1,6 @@
 import math
 import cv2
-import numpy as np
-
-def setLabel(img, pts, label):
-    (x, y, w, h) = cv2.boundingRect(pts)
-    pt1 = (x, y)
-    pt2 = (x + w, y + h)
-    cv2.rectangle(img, pt1, pt2, (0, 255, 0), 2)
-    cv2.putText(img, label, (pt1[0], pt1[1]-3), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255))
-
-def imsave(img, pts, num):
-    (x, y, w, h) = cv2.boundingRect(pts)
-    pt1 = (x, y)
-    pt2 = (x + w, y + h)
-    cv2.rectangle(img, pt1, pt2, (0, 255, 0), 2)
-    ROI = original[y:y+h, x:x+w]
+import numpy as np성
     cv2.imwrite('SPL_{}.png'.format(num), ROI)
 
 
